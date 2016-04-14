@@ -50,7 +50,7 @@
       ?>
 </nav>
 
-<div class="all-cat clearfix">
+<div class="all-cat clearfix well">
 	<div class="col-xs-12 col-sm-4">
 		<div class="list-left">
 			<h2><?php _e('热门路线', 'sage'); ?></h2>
@@ -120,10 +120,10 @@
 	$i=1;
 	foreach ( $lastposts as $post ) : setup_postdata( $post ); ?>
 	<div class="col-xs-12 col-sm-6">
-		<div class="col-xs-6">
+		<div class="col-xs-12 col-sm-6">
 			<div class="items "><?php echo get_the_post_thumbnail( $post->ID, 'full',array('class' => 'img-responsive img-rounded')) ?></div>
 		</div>
-		<div class="col-xs-6">			
+		<div class="col-xs-12 col-sm-6">			
 			<div class="comments img-rounded">				
 				<?php the_content();?>
 			</div>
