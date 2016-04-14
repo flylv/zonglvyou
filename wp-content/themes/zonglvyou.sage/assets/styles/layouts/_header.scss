@@ -1,0 +1,20 @@
+.banner{
+	.nav-primary{
+		display: inline-block;
+		#menu-main-menu{
+			li{
+				display: inline-block;
+			}
+		}
+	}
+}
+.nav-second{
+	#menu-second-menu{
+		padding: 0;		
+		text-align: center;
+		li{
+			list-style:none;
+			display: inline-block;
+		}
+	}
+}
