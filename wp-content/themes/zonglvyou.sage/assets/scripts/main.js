@@ -30,7 +30,9 @@
         // JavaScript to be fired on the home page
 
         $('.carousel').carousel({
-          interval: 4000
+          interval: 4000,
+          adaptiveHeight: false,
+          autoplay: true, 
         }); 
       },
       finalize: function() {

@@ -8,6 +8,7 @@
 
 <?php if( have_rows('slideshow') ): ?>
 <div id="homeslide" class="carousel slide" data-ride="carousel">
+<a href="" title="<?php _e('订制行程', 'sage'); ?>" class="privite"><span class="glyphicon glyphicon-send"></span><?php _e('订制行程', 'sage'); ?></a>
 
 <ol class="carousel-indicators">
 	<?php $i = 0;
@@ -42,16 +43,8 @@
 </div>
 <?php endif; ?>
 
- <nav class="nav-second clearfix">
-      <?php
-      if (has_nav_menu('second_navigation')) :
-        wp_nav_menu(['theme_location' => 'second_navigation', 'menu_class' => 'secondMenu']);
-      endif;
-      ?>
-</nav>
-
 <div class="all-cat clearfix well">
-	<div class="col-xs-12 col-sm-4">
+	<div class="col-xs-12 col-sm-3">
 		<div class="list-left">
 			<h2><?php _e('热门路线', 'sage'); ?></h2>
 		 	<?php if (has_nav_menu('hot_trip')) :
@@ -60,12 +53,12 @@
 		</div>	 
 	</div>
 
-	<div class="col-xs-12 col-sm-8">
+	<div class="col-xs-12 col-sm-9">
 	<div class="highline">
 		<?php $i=1;foreach (get_terms('category') as $cat) : ?>
 			<?php if($i>8) break; ?>
 		 	<?php if(z_taxonomy_image_url($cat->term_id)): ?>
-			 <div class="col-xs-6 col-sm-3 items" style="background-image: url(<?php echo z_taxonomy_image_url($cat->term_id); ?>);">
+			 <div class="col-xs-6 col-sm-3 items clearfix" style="background-image: url(<?php echo z_taxonomy_image_url($cat->term_id); ?>);">
 			 	<a href="<?php echo get_term_link($cat->slug, 'category'); ?>"><?php echo $cat->name; ?></a>
 			 </div>
 			<?php $i++;endif; ?>

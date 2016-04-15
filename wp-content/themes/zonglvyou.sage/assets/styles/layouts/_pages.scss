@@ -1,4 +1,5 @@
 #homeslide{
+	border-bottom: 5px solid #5cb85c;
 	.item{
 		.img{
 			height: 500px;
@@ -10,6 +11,36 @@
 		  	background-position: center center;
 		}
 	}
+	.privite{
+		position: absolute;
+		left: 50%;
+    	transform: translate(-50%, 0);
+		bottom: 0;
+		z-index: 9999;
+		background-color: #5cb85c;
+		color: #fff;
+		padding: 19px 39px 10px 31px;
+		font: 22px/24px "microsoft yahei";
+		text-decoration: none;
+		-webkit-border-top-left-radius: 15px;
+		-webkit-border-top-right-radius: 15px;
+		-moz-border-radius-topleft: 15px;
+		-moz-border-radius-topright: 15px;
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+		-webkit-box-shadow: 9px -4px 5px 0px rgba(50, 50, 50, 0.75);
+		-moz-box-shadow:    9px -4px 5px 0px rgba(50, 50, 50, 0.75);
+		box-shadow:         9px -4px 5px 0px rgba(50, 50, 50, 0.75);
+		span{
+			margin-right: 20px;
+			vertical-align: middle;
+		}
+	}
+	.carousel-indicators{
+		left: 20px;
+		margin: 0;
+		width: auto;
+	}
 }
 .highline{
 	.items{
@@ -20,12 +51,40 @@
 	  	-o-background-size: cover;
 	  	background-size: cover;
 	  	background-position: center center;
+	  	a{
+	  		font-size: 17px;
+	  		color: #fff;
+	  		margin: 10px auto;
+	  		display: block;
+	  	}
 	}
 }
 .home-title{
 	font-size: 26px;
 	text-align: center;
 	margin-bottom: 20px;
+}
+.all-cat{
+	margin: 30px auto 0;
+	h2{
+		color: #5cb85c;
+	    font-size: 28px;
+	    font-weight: bold;
+	    line-height: 30px;
+	    padding-bottom: 3px;
+	}
+	.hotTrip{
+		padding: 0;
+		li{
+			display: inline-block;
+			width: 30%;
+			margin-bottom: 10px;
+			list-style: none;
+			a{
+				color: #737373;
+			}
+		}
+	}
 }
 .hightrip{
 	margin: 50px auto;
@@ -56,7 +115,7 @@
 		  		font-size: 28px;
 		  		color: #fcff00;
 		  	}
-		  }	  	
+	  	}	  	
 	}
 }
 .client{
@@ -86,23 +145,209 @@
 		}
 	}
 }
-footer{
-	margin-bottom: 50px;
-	.footermenu{
-		padding:0;
-		margin: 0;
-		text-align: center;
+.cat-info{
+	background-color: #f5f5f5;
+	.cat-name{	
+		height: 200px;
+		h1{
+			font-size: 30px;
+			margin-top: 30px;
+			font-weight: bold;
+		}
+		.trip-count{
+			font-size: 14px;
+			color: #666;
+			position: absolute;
+			bottom: 20px;
+		}
+	}
+	.cat-img{
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+	  	-moz-background-size: cover;
+	  	-o-background-size: cover;
+	  	background-size: cover;
+	  	background-position: center center;
+	  	height: 200px;
+	}
+}
+.tirp-list{
+	margin-top: 20px;
+	.items{
+		.trip-img{
+			min-height: 250px;
+			background-repeat: no-repeat;
+			-webkit-background-size: cover;
+		  	-moz-background-size: cover;
+		  	-o-background-size: cover;
+		  	background-size: cover;
+		  	background-position: center center;
+		  	.tip-num{
+		  		position: absolute;
+		  		left: -19px;
+		  		top: 0;
+		  		color: #fff;
+			    display: inline-block;
+			    font-size: 14px;
+			    font-weight: bold;
+			    height: 55px;
+			    line-height: 55px;
+			    text-align: center;
+			    width: 68px;
+			    z-index: 2;
+			    background: #b7cc02 none repeat scroll 0 0;
+			    i{
+			    	font-size: 24px; 
+    				font-style: italic;
+			    }
+		  	}
+		}
+		h2{
+			font-size: 16px;
+			line-height: 24px;
+		}
+		.trip-meta{			
+			span{
+				color: #999;
+				margin-right: 20px;
+			}
+		}
+		.collapse div{
+			border-left: 1px dashed #ccc;
+			padding: 20px;
+		}
+	}
+	hr{
+		background-color: #b7cc02;
+		border-color: #b7cc02;
+	}
+}
+.single-trip{
+	h1{
+		font-size: 24px;
+		line-height: 34px;
+		margin: 0 auto 30px;
+	}
+	#tripslide{
+		img{
+			height: 300px;
+			width: 100%;
+		}
+	}
+	.trip-meta{
+		margin: 15px auto;
+		div{
+			margin-bottom: 10px;
+		}
+		span{
+			color: #999;
+		}		
+	}
+	.trip-action{
+		a{
+			font-size: 18px;
+    		padding: 10px 20px;
+    		display: block;
+    		margin: 15px 0;
+		}
+	}
+	.priceInfo{
+  		color: #000;
+  		.price{
+	  		font-size: 28px;
+	  		color: #4cae4c;
+	  	}
+  	}
+  	.menuCon{
+  		padding: 0;
+  		li{
+  			border: 1px solid #2ba165;
+		    display: inline-block;
+		    list-style: outside none none;
+		    padding: 0 10px 0 0;
+		    margin: 0 5px 5px 0;
+  			span{
+  				background-color: #2ba165;
+			    color: #fff;
+			    font-size: 11px;
+			    line-height: 22px;
+			    text-align: center;
+			    top: 0;
+			    vertical-align: top;
+			    width: 25px;
+  			}
+  		}
+  	}
+  	.trip-detail{
+  		.trip-waps{
+  			position: relative;
+  			margin-top: 30px;
+  		}
+  		border-left: 1px dashed #ccc;
+		.jour-day{
+			.day-num{
+				color: #5cb85c;
+			    display: inline-block;
+			    float: left;
+			    font: 71px/60px Helvetica,Arial,sans-serif;
+			    height: 80px;
+			    letter-spacing: -5px;
+			    min-width: 56px;
+			    padding: 0 5px 0 10px;
+			    text-align: right;
+			}
+			.day-inf {
+		    	padding-left: 70px;
+		    	padding-top: 3px;
+			}
+			.day-day {
+			    background: #5cb85c none repeat scroll 0 0;
+			    color: #fff;
+			    display: inline-block;
+			    font: 27px/28px Helvetica,Arial,sans-serif;
+			    height: 28px;
+			    text-align: center;
+			    width: 70px;
+			}
+			.day-dest-list {
+			    color: #5cb85c;
+			    font: 16px/24px "microsoft yahei";
+			}
+			.day-icon {
+			    display: inline-block;
+			    height: 24px;
+			    left: -28px;
+			    position: absolute;
+			    top: 10px;
+			    width: 24px;
+			    background: url('../images/trip-icon.png') no-repeat center center transparent;
+			}
+		}
+	}  
+	.top-menu{
+		background-color: #46b8da;	
+		padding: 0 0 0 20px;	
 		li{
 			display: inline-block;
 			list-style: none;
-			:after{
-				content: " | ";
-			}			
-		}
-		li:last-child{
-			:after{
-				content: none;
+			padding: 12px 15px;
+			a{
+				color: #fff;
+				font: 16px/32px "microsoft yahei";
+    			height: 32px;
 			}
 		}
+	}	
+	.inside-title{
+		span{
+    		border-bottom: 1px solid #5cb85c;
+    	}
+		font: 18px "microsoft yahei";
+    	padding-bottom: 10px;
+	}
+	.theprice{
+		border-top: 1px dashed #ccc;
+		margin: 30px auto;
+		padding-top: 30px;
 	}
 }

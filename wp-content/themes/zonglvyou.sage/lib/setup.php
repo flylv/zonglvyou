@@ -30,10 +30,6 @@ function setup() {
     'primary_navigation' => __('Primary Navigation', 'sage')
   ]);
 
-  register_nav_menus([
-    'second_navigation' => __('Second Navigation', 'sage')
-  ]);
-
  register_nav_menus([
     'hot_trip' => __('热门路线', 'sage')
   ]);
