@@ -1,3 +1,6 @@
+.well{
+	background-color: #fff;
+}
 #homeslide{
 	border-bottom: 5px solid #5cb85c;
 	.item{
@@ -146,7 +149,8 @@
 	}
 }
 .cat-info{
-	background-color: #f5f5f5;
+	margin-top: 30px;
+	background-color: #fff;
 	.cat-name{	
 		height: 200px;
 		h1{
@@ -349,5 +353,145 @@
 		border-top: 1px dashed #ccc;
 		margin: 30px auto;
 		padding-top: 30px;
+	}
+}
+#customeTrip{
+	padding-top: 50px;
+	h1{
+		font-size: 32px;
+	    font-weight: bold;
+	    text-align: center;
+	    color: #fff;
+	    margin-bottom: 30px;
+	}
+	.custom-form{
+		background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0 !important;
+    	padding: 20px;
+    	width: 100%;
+    	color:#fff;
+    	.ninja-forms-required-items{
+    		font-size: 11px;
+    		text-align: center;
+    		margin-bottom: 10px;
+    	}
+    	.field-wrap{
+    		background: #fff none repeat scroll 0 0;
+		    border: 1px solid #fff;
+		    color: #838383;
+		    margin: 0 auto 15px;
+		    width: 85%;
+		    -webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+			padding: 10px;
+			vertical-align: middle;
+    		label{
+    			display: inline-block;
+    			min-width: 100px;
+    			vertical-align: top;
+    		}
+    		input{
+    			border:none;
+    		}
+    		ul{
+    			li{
+    				display: inline-block;
+    				padding: 0;
+    				margin: 0;
+    				label{
+    					width: auto;
+    					min-width: 60px;
+    				}
+    			}
+    		}
+    		.g-recaptcha{
+    			display: inline-block;
+    		}    		
+    	}
+    	.submit-wrap{
+			margin: 0 auto 15px;
+		    width: 85%;
+			text-align: center;
+			background: #5cb85c;
+			border-color: #5cb85c;
+			input{
+				background:none;
+				color: #fff;
+				font-size: 22px;
+			}
+		}
+	}
+	.custome-text{
+		color: #fff;
+		dl{
+		    font-size: 14px;
+		    padding-left: 20px;
+		    dt{
+		    	font-size: 36px;
+    			padding: 10px 0;
+		    }
+		    dd{
+		    	line-height: 22px;
+		    }
+		}
+	}
+	.custome-bot{
+		color: #fff;
+		.our-hd{
+			text-align: center;
+		}
+		.our-tit{		
+		    font-size: 18px;
+		    font-weight: bold;
+		    height: 80px;
+		    line-height: 80px;
+		}
+		.our-item {
+		    color: #fff;
+		    float: left;
+		    font-size: 14px;
+		    line-height: 22px;
+		    overflow: hidden;
+		    width: 30%;
+		    text-align: center;
+		}
+	}
+	.ninja-forms-response-msg{
+		text-align: center;
+		font-size: 20px;
+	}
+}
+.page-simple{
+	background-color: #fff;
+	padding: 20px;
+	margin-top: 30px;
+	.page-header{
+		margin: 20px auto;
+	}
+	.ninja-forms-form{
+		width: 80%;
+		margin: 0 auto;
+		.ninja-forms-required-items{
+			text-align: center;
+			font-size: 12px;
+		}
+		.field-wrap{
+			input{
+				width: 100%;
+				margin: 0;
+			}
+			textarea{
+				width:100%; 
+				margin: 0;
+			}
+		}
+		.submit-wrap{
+			text-align: center;
+			input{
+				width: auto!important;
+				font-size: 20px;
+				padding: 5px 20px;
+			}
+		}
 	}
 }

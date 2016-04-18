@@ -68,7 +68,7 @@
 			<div class="priceInfo"><span class="price"><?php echo get_field( "totalprice") ?></span> <?php _e('起/人', 'sage'); ?></div>
 		<?php endif ?>
         <a class="btn btn-success" href="" title="<?php the_title(); ?>"><?php _e('开始预定', 'sage'); ?></a>
-        <a class="btn btn-info" href="" title="<?php _e('订制行程', 'sage'); ?>"><?php _e('订制行程', 'sage'); ?></a>
+        <a class="btn btn-info" href="<?php echo get_permalink(17)?>" target="_blank" title="<?php _e('订制行程', 'sage'); ?>"><?php _e('订制行程', 'sage'); ?></a>
       </div>
       
       <div class="col-xs-12">

@@ -6,7 +6,7 @@ $args = array(
 'cat' => get_query_var('cat')
 );
 $the_query = new WP_Query($args);?>
-<div class="cat-info clearfix img-rounded">
+<div class="cat-info clearfix img-rounded animated slideInLeft">
   <div class="col-xs-2 cat-name">
     <h1><?php echo get_cat_name(get_query_var('cat') ) ?></h1>
     <div class="trip-count">
@@ -19,9 +19,9 @@ $the_query = new WP_Query($args);?>
   <?php endif ?>
  
 </div>
-<div class="main tirp-list">
+<div class="main tirp-list animated slideInRight">
 <?php $i = 1; while ($the_query->have_posts()) :  $the_query->the_post(); ?>
-  <?php $furtureImg = wp_get_attachment_image_src(get_post_thumbnail_id( $the_query->ID, 'full' ));
+  <?php $furtureImg = wp_get_attachment_image_src(get_post_thumbnail_id( $the_query->ID), 'full' );
     if(count($furtureImg))
       $url = $furtureImg[0];
     else
@@ -55,7 +55,7 @@ $the_query = new WP_Query($args);?>
           <?php _e('行程概要', 'sage'); ?>
         </button>
 
-        <a class="btn btn-info" href="" title="<?php _e('订制行程', 'sage'); ?>"><?php _e('订制行程', 'sage'); ?></a>
+        <a class="btn btn-info" href="<?php echo get_permalink(17)?>" target="_blank" title="<?php _e('订制行程', 'sage'); ?>"><?php _e('订制行程', 'sage'); ?></a>
         <a class="btn btn-warning" href="<?php the_permalink()?>" title="<?php the_title(); ?>"><?php _e('详细行程', 'sage'); ?></a>
       </div>
 

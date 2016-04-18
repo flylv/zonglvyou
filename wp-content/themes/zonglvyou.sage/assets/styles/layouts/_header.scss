@@ -1,4 +1,17 @@
+body{
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	background-position: center center;
+  	background-color: #f2f2f2;
+}
 .banner{
+	background:rgba(255, 255, 255, 0.8) none repeat scroll 0 0;
+	.container{		
+		position: relative;
+	}
 	.nav-primary{
 		display: inline-block;
 		#menu-main-menu{
@@ -16,5 +29,96 @@
 			list-style:none;
 			display: inline-block;
 		}
+	}
+}
+.nav-primary{
+	li{
+		display: inline-block;
+	    padding: 0 14px;
+	    z-index: 110;
+	    position: static;
+		a{
+			border-bottom: 4px solid transparent;
+		    color: #000;
+		    display: inline-block;
+		    font: 16px/60px "microsoft yahei";
+		    height: 60px;
+		    padding: 0 5px;
+		    text-align: center;
+		    text-decoration: none;
+		    &:hover,&:focus{
+		    	background: none;
+		    	color: #72b32a;
+		    }		    
+		}
+	}
+	.current-menu-item{
+		a{
+			color: #72b32a;
+    		font-weight: bold;
+		}
+	}
+	.sub-menu{
+		display: none;
+		z-index: 9999;
+		background-color: #fff;
+		position: absolute;
+		width: 100%;
+		padding: 0 20px 20px 20px;
+		left: 0;
+		li{
+			display: inline-block;
+			vertical-align: top;
+    		width: 150px;
+    		//border-bottom: 1px solid #878787;
+    		margin: 10px 20px 10px 0;
+    		padding-bottom: 20px;
+			a{
+				color: #008869;
+			    font-size: 18px;
+			    line-height: 20px; 
+			    height: auto;
+			    padding: 10px 0 5px 0;
+			}
+			ul{
+				position: static;
+				display: block;
+				padding:0;
+				li{
+					display: inline-block;
+					padding: 0;
+					width: auto;
+					border:none;
+					margin: 0;
+					a{
+						border-radius: 2px;
+					    color: #878787;
+					    display: inline-block;
+					    font-size: 14px;
+					    height: 16px;
+					    line-height: 16px;
+					    padding: 0 4px;
+					    &:hover,&:focus{
+					    	background-color: #008869;
+					    	color: #fff;
+					    }
+					}
+				}
+			}
+		}
+	}
+}
+.nav-primary{
+	li{
+		&:hover > .sub-menu{
+	    	display: block;
+	    }
+	}	
+}
+
+.page-header{
+	h1{
+		color: #333;
+	    font-size: 18px;
 	}
 }
