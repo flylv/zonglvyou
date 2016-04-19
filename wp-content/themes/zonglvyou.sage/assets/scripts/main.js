@@ -33,6 +33,7 @@
           interval: 4000,
           adaptiveHeight: false,
           autoplay: true, 
+          draggable:true,
         }); 
       },
       finalize: function() {

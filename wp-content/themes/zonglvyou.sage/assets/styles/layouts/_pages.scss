@@ -23,7 +23,7 @@
 		background-color: #5cb85c;
 		color: #fff;
 		padding: 19px 39px 10px 31px;
-		font: 22px/24px "microsoft yahei";
+		font: 30px/24px "microsoft yahei";
 		text-decoration: none;
 		-webkit-border-top-left-radius: 15px;
 		-webkit-border-top-right-radius: 15px;
@@ -36,13 +36,11 @@
 		box-shadow:         9px -4px 5px 0px rgba(50, 50, 50, 0.75);
 		span{
 			margin-right: 20px;
-			vertical-align: middle;
+			vertical-align: bottom;
 		}
 	}
 	.carousel-indicators{
-		left: 20px;
-		margin: 0;
-		width: auto;
+		bottom: 70px;
 	}
 }
 .highline{
@@ -54,12 +52,17 @@
 	  	-o-background-size: cover;
 	  	background-size: cover;
 	  	background-position: center center;
-	  	a{
-	  		font-size: 17px;
-	  		color: #fff;
-	  		margin: 10px auto;
-	  		display: block;
-	  	}
+	  	border: 5px solid #fff;
+	  	font-size: 17px;
+  		color: #fff;
+  		padding: 20px;  
+  		-webkit-transition: 0.5s ease-in-out;
+	    -moz-transition: 0.5s ease-in-out;
+	    -o-transition: 0.5s ease-in-out;
+	    transition: 0.5s ease-in-out;
+	  	&:hover{
+  			transform: translateY(-10px);
+  		}		
 	}
 }
 .home-title{
@@ -100,6 +103,14 @@
 	  	background-position: center center;
 	  	position: relative;
 	  	height: 400px;
+	  	color: #fff;
+	  	-webkit-transition: 0.5s ease-in-out;
+	    -moz-transition: 0.5s ease-in-out;
+	    -o-transition: 0.5s ease-in-out;
+	    transition: 0.5s ease-in-out;
+	  	&:hover{
+  			transform: translateY(-10px);
+  		}
 	  	.des{
 			position: absolute;
 			bottom: 0;
@@ -373,6 +384,7 @@
     		font-size: 11px;
     		text-align: center;
     		margin-bottom: 10px;
+    		display: none;
     	}
     	.field-wrap{
     		background: #fff none repeat scroll 0 0;
@@ -407,6 +419,34 @@
     		.g-recaptcha{
     			display: inline-block;
     		}    		
+    	}
+    	.tripyear-wrap{
+    		width: 45%;
+    		display: inline-block;
+    		margin-left: 7%;
+    		select{
+    			border:none;
+    		}
+    	}
+    	.tripmonth-wrap{
+			width: 20%;
+    		display: inline-block;
+    		select{
+    			border:none;
+    		}
+    		label{
+    			display: none;
+    		}
+    	}
+    	.tripday-wrap{
+			width: 19%;
+    		display: inline-block;
+    		select{
+    			border:none;
+    		}
+    		label{
+    			display: none;
+    		}
     	}
     	.submit-wrap{
 			margin: 0 auto 15px;

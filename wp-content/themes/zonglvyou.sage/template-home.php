@@ -8,7 +8,7 @@
 
 <?php if( have_rows('slideshow') ): ?>
 <div id="homeslide" class="carousel slide" data-ride="carousel">
-<a href="<?php echo get_permalink(17)?>" title="<?php _e('订制行程', 'sage'); ?>" class="privite"><span class="glyphicon glyphicon-send"></span><?php _e('订制行程', 'sage'); ?></a>
+<a href="<?php echo get_permalink(17)?>" title="<?php _e('帮我订制行程', 'sage'); ?>" class="privite"><span class="glyphicon glyphicon-send"></span><?php _e('帮我订制行程', 'sage'); ?></a>
 
 <ol class="carousel-indicators">
 	<?php $i = 0;
@@ -58,9 +58,11 @@
 		<?php $i=1;foreach (get_terms('category') as $cat) : ?>
 			<?php if($i>8) break; ?>
 		 	<?php if(z_taxonomy_image_url($cat->term_id)): ?>
+			 <a href="<?php echo get_term_link($cat->slug, 'category'); ?>" >
 			 <div class="col-xs-6 col-sm-3 items clearfix" style="background-image: url(<?php echo z_taxonomy_image_url($cat->term_id); ?>);">
-			 	<a href="<?php echo get_term_link($cat->slug, 'category'); ?>" class="hvr-grow"><?php echo $cat->name; ?></a>
+			 	<?php echo $cat->name; ?>
 			 </div>
+			 </a>
 			<?php $i++;endif; ?>
 	 	<?php endforeach; ?>
  	</div>
@@ -87,15 +89,17 @@
 			$url = '';
 	 ?>
 	<div class="col-xs-12 col-sm-3">
+		<a href="<?php the_permalink(); ?>" class="tirpTitle">
 		<div class="items img-rounded" style="background-image: url(<?php echo $url; ?>);">
-			<div class="des hvr-grow">
-				<a href="<?php the_permalink(); ?>" class="tirpTitle"><?php the_title(); ?></a>
+			<div class="des">
+				<?php the_title(); ?>
 				<?php if (get_field( "totalprice")): ?>
 					<div class="priceInfo"><span class="price"><?php echo get_field( "totalprice") ?></span> <?php _e('起/人', 'sage'); ?></div>
 				<?php endif ?>
 				
 			</div>
 		</div>
+		</a>
 	</div>	
 
 	<?php endforeach; 
