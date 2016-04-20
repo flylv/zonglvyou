@@ -67,7 +67,7 @@
       	<?php if (get_field( "totalprice")): ?>
 			<div class="priceInfo"><span class="price"><?php echo get_field( "totalprice") ?></span> <?php _e('起/人', 'sage'); ?></div>
 		<?php endif ?>
-        <a class="btn btn-success" href="" title="<?php the_title(); ?>"><?php _e('开始预定', 'sage'); ?></a>
+        <a class="btn btn-success" href="<?php echo get_permalink(170)?>?token=<?php echo get_the_ID();?>" title="<?php the_title(); ?>"><?php _e('开始预定', 'sage'); ?></a>
         <a class="btn btn-info" href="<?php echo get_permalink(17)?>" target="_blank" title="<?php _e('私人订制', 'sage'); ?>"><?php _e('私人订制', 'sage'); ?></a>
       </div>
       

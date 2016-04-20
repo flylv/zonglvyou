@@ -57,13 +57,16 @@ $the_query = new WP_Query($args);?>
           <?php _e('行程概要', 'sage'); ?>
         </button> -->
 
-        <a class="btn btn-info" href="<?php echo get_permalink(17)?>" target="_blank" title="<?php _e('咨询顾问', 'sage'); ?>"><?php _e('咨询顾问', 'sage'); ?></a>
+        <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#tripSum<?php echo $i ?>" aria-expanded="false" aria-controls="ripSum<?php echo $i ?>"><?php _e('咨询顾问', 'sage'); ?></button>
         <a class="btn btn-warning" href="<?php the_permalink()?>" title="<?php the_title(); ?>"><?php _e('详细行程', 'sage'); ?></a>
       </div>
 
-<!--     <div class="collapse" id="tripSum<?php echo $i ?>">
-      <div><?php the_content() ?></div>
-    </div> -->
+    <div class="collapse" id="tripSum<?php echo $i ?>">
+      <div class="contactForm">
+      <p><?php _e('请输入电话号码，我们会主动跟您联系。', 'sage'); ?></p>
+      <?php if( function_exists( 'ninja_forms_display_form' ) ){ ninja_forms_display_form( 11 ); }?>
+      </div>
+    </div> 
       
     </div>
   </div>

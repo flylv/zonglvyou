@@ -227,9 +227,49 @@
 				margin-right: 20px;
 			}
 		}
-		.collapse div{
-			border-left: 1px dashed #ccc;
-			padding: 20px;
+		.collapse{
+			.contactForm{
+				margin: 20px auto;
+				background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0 !important;
+			    color: #fff;
+			    padding: 20px;
+				text-align: center;
+				.field-wrap{
+		    		background: #fff none repeat scroll 0 0;
+				    border: 1px solid #fff;
+				    color: #838383;
+				    margin: 0 auto 15px;
+				    width: 85%;
+				    -webkit-border-radius: 5px;
+					-moz-border-radius: 5px;
+					border-radius: 5px;
+					padding: 10px;
+					vertical-align: middle;
+		    		label{
+		    			display: inline-block;
+		    			min-width: 40px;
+		    			vertical-align: top;
+		    		}
+		    		input{
+		    			border:none;
+		    		}
+		    		&.hidden-wrap{
+		    			display: none;
+		    		}	
+		    	}
+		    	.submit-wrap{
+					margin: 0 auto 15px;
+				    width: 85%;
+					text-align: center;
+					background: #46b8da;
+					border-color: #46b8da;
+					input{
+						background:none;
+						color: #fff;
+						font-size: 16px;
+					}
+				}
+			}
 		}
 	}
 	hr{
