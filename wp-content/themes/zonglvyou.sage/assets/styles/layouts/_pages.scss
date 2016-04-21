@@ -575,3 +575,41 @@
 		}
 	}
 }
+.order-dev{
+	.trip-img{
+		min-height: 200px;
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+	  	-moz-background-size: cover;
+	  	-o-background-size: cover;
+	  	background-size: cover;
+	  	background-position: center center;
+	}
+	.orderTitle{
+		font-family: "Microsoft YaHei";
+    	font-size: 16px;
+    	color: #fff;
+	}
+	.priceInfo{
+		span{
+			color: #fcff00;
+    		font-size: 28px;
+		}
+	}
+	.moreinfo{
+		color: #fff;
+		float: right;
+	}
+	.des{
+		 background: rgba(113, 179, 43, 0.85) none repeat scroll 0 0;
+		 padding-left: 0;
+		 color: #fff;
+	}
+	form{
+		label{
+			strong{
+				color: red;
+			}
+		}
+	}
+}
