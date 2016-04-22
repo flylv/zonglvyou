@@ -46,7 +46,7 @@
         $('#datetimepicker').datepicker({
             calendarWeeks: true,
             autoclose: true,
-            todayHighlight: true
+            todayHighlight: true 
         });
       }
     }
