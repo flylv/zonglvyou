@@ -17,6 +17,11 @@
         "scripts/customizer.js"
       ]
     },
+    "bootstrap-datepicker.min.js": {
+      "files": [
+        "scripts/bootstrap-datepicker.min.js"
+      ]
+    },
     "jquery.js": {
       "bower": ["jquery"]
     }

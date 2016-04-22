@@ -86,7 +86,7 @@ add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
  * Determine which pages should NOT display the sidebar
  */
 function display_sidebar() {
-  static $display;
+  static $display; 
 
   isset($display) || $display = !in_array(true, [
     // The sidebar will NOT be displayed if ANY of the following return true.
@@ -110,6 +110,6 @@ function assets() {
   }
 
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
-  wp_enqueue_script('sage/js', Assets\asset_path('scripts/validator.min.js.js'), ['jquery'], null, true);
+  wp_enqueue_script('sage/datepicker', Assets\asset_path('scripts/bootstrap-datepicker.min.js'), ['jquery'], null, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);

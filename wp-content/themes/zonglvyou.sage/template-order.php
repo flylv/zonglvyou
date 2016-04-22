@@ -13,7 +13,8 @@ if(isset($_POST) && count($_POST)){
 			'trip_id' => (int)$_POST['tripId'], 
 			'quality' => (int)$_POST['quality'], 
 			'name' => $_POST['username'], 
-			'phone' => $_POST['phone'], 
+			'phone' => $_POST['phone'],
+			'tripDate' => $_POST['tripDate'],  
 	));
 }?>
 
@@ -25,7 +26,7 @@ if(isset($_POST) && count($_POST)){
 		<?php if (get_field( "adminemail")) {
 			$headers = "Content-type: text/html; charset=".get_bloginfo('charset')."" . "\r\n";
 			$headers .= "From: ".get_bloginfo('name')." <contact@xxxx.com>" . "\r\n";
-			$message = "<p>新的行程已预订：</p><p>旅行路线：".get_the_title($tripId)."</p><p>联系人姓名: ".$_POST['username']."</p><p>手机号: ".$_POST['phone']."</p><p>旅行人数: ".$_POST['quality']."</p>";
+			$message = "<p>新的行程已预订：</p><p>旅行路线：".get_the_title($tripId)."</p><p>出发日期: ".$_POST['tripDate']."</p><p>联系人姓名: ".$_POST['username']."</p><p>手机号: ".$_POST['phone']."</p><p>旅行人数: ".$_POST['quality']."</p>";
 			wp_mail( get_field( "adminemail"), "预订行程", $message, $headers);
 		} ?>
 		<div class="col-xs-12 col-sm-6">
@@ -39,6 +40,17 @@ if(isset($_POST) && count($_POST)){
 			<div class="col-xs-12 col-sm-6">
 			<form class="form-horizontal" id="orderForm" action="<?php the_permalink()?>" method="POST" data-toggle="validator" role="form">
 				<input type="hidden" name="tripId" value="<?php echo $tripId?>">
+
+				<div class="form-group">
+				 	<label for="username" class="col-sm-3 control-label"><?php _e('出发日期', 'sage'); ?></label>
+	                <div class='input-group date col-sm-9' id='datetimepicker'>
+	                    <input type='text' class="form-control" name="tripDate" />
+	                    <span class="input-group-addon">
+	                        <span class="glyphicon glyphicon-calendar"></span>
+	                    </span>
+	                </div>
+	            </div>
+
 			  <div class="form-group">
 			    <label for="username" class="col-sm-3 control-label"><?php _e('联系人姓名', 'sage'); ?><strong>*</strong></label>
 			    <div class="col-sm-9">
@@ -98,3 +110,5 @@ if(isset($_POST) && count($_POST)){
 		<?php endif ?>
 	</div>
 <?php endwhile; ?>
+
+

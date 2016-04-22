@@ -612,4 +612,7 @@
 			}
 		}
 	}
+	.input-group[class*="col-"]{
+		padding: 0 15px; 
+	}
 }

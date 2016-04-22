@@ -21,6 +21,8 @@ if( !class_exists('TripOrder') ):
     function View(){
       global $wpdb;
 
+      $tb = $wpdb->prefix.'order';
+
       if($_GET['page'] == 'TripOrder' && isset($_GET['orderId']) && isset($_GET['action'])){
           if($_GET['action'] == "del")
             $this->deleteOrder($_GET['orderId']);
@@ -35,7 +37,20 @@ if( !class_exists('TripOrder') ):
           $this->viewUser($_GET['userId']); 
       }
 
-      $tb = $wpdb->prefix.'order';
+      if(count($_POST)){
+        $wpdb->update( 
+          $tb, 
+          array( 
+            'quality' => (int)$_POST['quality'], 
+            'name' => $_POST['username'], 
+            'phone' => $_POST['phone'], 
+            'status' => $_POST['status'], 
+            'tripDate' => $_POST['tripDate'], 
+          ), 
+          array('order_id' => $_POST['orderId'])
+        );
+      }
+
       $result = $wpdb->get_results("SELECT * FROM $tb ORDER BY addDate DESC");?>
 
       <div class="wrap">
@@ -62,7 +77,7 @@ if( !class_exists('TripOrder') ):
                      <span>状态 </span>
                   </th>
                   <th style="" class="manage-column column-username" scope="col">
-                     <span>日期 </span>
+                     <span>出发日期 </span>
                   </th>
                   <th style="" class="manage-column column-username" scope="col">
                      <span>操作 </span>
@@ -71,7 +86,7 @@ if( !class_exists('TripOrder') ):
             </thead>
 
             <tbody class="list:user" id="the-list">
-                <?php foreach($result as $row):?>
+              <?php foreach($result as $row):?>
             <tr class="alternate" id="user-1">
               <td class="username column-username"><?php echo $row->order_id;?></td>
                 <td class="username column-username"><?php echo get_the_title($row->trip_id);?></td>
@@ -79,11 +94,12 @@ if( !class_exists('TripOrder') ):
                 <td class="username column-username"><?php echo $row->quality;?></td>
                 <td class="username column-username"><?php echo $row->phone;?></td>
                 <td class="username column-username"><?php echo ($row->status)?'<font style="color:#0a0"">已处理</font>':'<font style="color:red"">未处理</font>';?></td>                       
-                <td class="username column-username"><?php echo date("d/m/Y", strtotime($row->addDate));?></td>
+                <td class="username column-username"><?php echo $row->tripDate;?></td>
                 <td> <a href="<?php echo trailingslashit(get_option('siteurl')).'wp-admin/admin.php?page=TripOrder&action=edit&orderId='.$row->order_id;?>">编辑</a> | 
                      <a href="javascript:if(confirm('确定删除?')) {window.location='<?php echo trailingslashit(get_option('siteurl')).'wp-admin/admin.php?page=TripOrder&action=del&orderId='.$row->order_id;?>'}else{}">删除</a> </td>
             </tr>   
              <?php endforeach;?>
+             </tbody>
         </table>
        </div> 
                 
@@ -138,9 +154,16 @@ if( !class_exists('TripOrder') ):
                     <td>
                       <input type="text" class="form-control" id="phone" name="phone" placeholder="<?php _e('手机号', 'sage'); ?>" value="<?php echo $row->phone;?>">
                    </td>
-                  </tr>
+                  </tr>                 
 
                   <tr>
+                    <td><label for="tripDate" class="col-sm-3 control-label"><?php _e('出发日期', 'sage'); ?></label></td>
+                    <td>
+                      <input type="text" class="form-control" id="tripDate" name="tripDate" placeholder="<?php _e('出发日期', 'sage'); ?>" value="<?php echo $row->tripDate;?>">
+                   </td>
+                  </tr>
+
+                   <tr>
                     <td><label class="col-sm-3 control-label"><?php _e('状态', 'sage'); ?></label></td>
                     <td>
                       <label class="control-label"><?php _e('已处理', 'sage'); ?><input type="radio" class="form-control" name="status" value="1" <?php if($row->status) echo "checked='checked'"?>/></label>

@@ -28,13 +28,7 @@
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
-
-        $('.carousel').carousel({
-          interval: 4000,
-          adaptiveHeight: false,
-          autoplay: true, 
-          draggable:true,
-        }); 
+ 
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
@@ -44,6 +38,16 @@
     'about_us': {
       init: function() {
         // JavaScript to be fired on the about us page
+      }
+    },
+     'page_template_template_order': {
+      finalize: function() {
+        // JavaScript to be fired on all pages, after page specific JS is fired
+        $('#datetimepicker').datepicker({
+            calendarWeeks: true,
+            autoclose: true,
+            todayHighlight: true
+        });
       }
     }
   };
