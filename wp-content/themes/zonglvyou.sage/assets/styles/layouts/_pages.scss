@@ -1,5 +1,5 @@
 .well{
-	background-color: #fff;
+	background-color: #fff; 
 }
 #homeslide{
 	border-bottom: 5px solid #5cb85c;
@@ -132,33 +132,6 @@
 	  	}	  	
 	}
 }
-.client{
-	margin: 50px auto;
-	hr{
-		border-color: #fff;
-		background-color: #fff;
-	}
-	.comments{
-		position: relative;
-		background-color: #47bc80;
-		padding: 15px;
-		color: #fff;
-		:before{
-			right: 100%;
-			top: 20%;
-			border: solid transparent;
-			content: " ";
-			height: 0;
-			width: 0;
-			position: absolute;
-			pointer-events: none;
-			border-color: rgba(136, 183, 213, 0);
-			border-right-color: #47bc80;
-			border-width: 10px;
-			margin-top: -10px;
-		}
-	}
-}
 .cat-info{
 	margin-top: 30px;
 	background-color: #fff;
@@ -229,22 +202,22 @@
 		}
 		.collapse{
 			.contactForm{
-				margin: 20px auto;
-				background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0 !important;
+                margin: 20px auto;
+                background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0 !important;
 			    color: #fff;
 			    padding: 20px;
-				text-align: center;
-				.field-wrap{
-		    		background: #fff none repeat scroll 0 0;
-				    border: 1px solid #fff;
-				    color: #838383;
-				    margin: 0 auto 15px;
-				    width: 85%;
-				    -webkit-border-radius: 5px;
-					-moz-border-radius: 5px;
-					border-radius: 5px;
-					padding: 10px;
-					vertical-align: middle;
+                text-align: center;
+                .field-wrap{
+                    background: #fff none repeat scroll 0 0;
+                    border: 1px solid #fff;
+                    color: #838383;
+                    margin: 0 auto 15px;
+                    width: 85%;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    border-radius: 5px;
+                    padding: 10px;
+                    vertical-align: middle;
 		    		label{
 		    			display: inline-block;
 		    			min-width: 40px;
@@ -255,8 +228,8 @@
 		    		}
 		    		&.hidden-wrap{
 		    			display: none;
-		    		}	
-		    	}
+		    		}                                	
+		    	}                   
 		    	.submit-wrap{
 					margin: 0 auto 15px;
 				    width: 85%;
@@ -269,6 +242,21 @@
 						font-size: 16px;
 					}
 				}
+				.ninja-forms-response-msg{
+					background-color: #fff;
+				    display: block;
+				    height: 345px;
+				    left: 50%;
+				    margin-left: -230px;
+				    margin-top: -170px;
+				    outline: medium none;
+				    overflow: visible !important;
+				    position: fixed;
+				    top: 50%;
+				    visibility: visible;
+				    width: 460px;
+				    z-index: 10000;
+				}
 			}
 		}
 	}
@@ -277,6 +265,7 @@
 		border-color: #b7cc02;
 	}
 }
+
 .single-trip{
 	h1{
 		font-size: 24px;

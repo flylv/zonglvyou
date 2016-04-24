@@ -19,7 +19,7 @@ $the_query = new WP_Query($args);?>
   <?php endif ?>
  
 </div>
-<div class="main tirp-list">
+<div class="col-xs-12 col-sm-9 tirp-list">
 <?php $i = 1; while ($the_query->have_posts()) :  $the_query->the_post(); ?>
   <?php $furtureImg = wp_get_attachment_image_src(get_post_thumbnail_id( $the_query->ID), 'full' );
     if(count($furtureImg))
@@ -73,5 +73,30 @@ $the_query = new WP_Query($args);?>
 <?php $i++;endwhile; ?>
 <?php wp_reset_postdata(); ?>
 </div>
+
+<div class=" col-xs-12 col-sm-3">
+    <div class="client clearfix">
+     <h2 class="home-title"><?php _e('旅行归来用户体验', 'sage'); ?></h2>
+        <?php
+        $args = array( 
+                'posts_per_page' => 4,
+                'post_status'      => 'publish',
+                'post_type'        => 'clientcomment',
+        );
+        $lastposts = get_posts( $args );
+
+        foreach ( $lastposts as $post ) : setup_postdata( $post ); ?>
+        <div class="col-xs-12 comment-div">
+            <div class="user"><span class="glyphicon glyphicon-user"></span><?php the_title()?></div>
+            <div class="comments">				
+                    <?php the_content();?>
+            </div>
+            <div class="happy"><?php _e('满意度', 'sage'); ?> : <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
+        </div>
+        <?php endforeach; 
+        wp_reset_postdata(); ?>
+    </div>
+</div>
+<div id="cboxOverlay"></div>
 
 

@@ -115,33 +115,6 @@
 	<?php endforeach; 
 	wp_reset_postdata(); ?>
 </div>
-
-<div class="client clearfix well animated zoomIn">
-<h2 class="home-title"><?php _e('客户反馈', 'sage'); ?></h2>
-	<?php
-	$args = array( 
-		'posts_per_page' => 4,
-		'post_status'      => 'publish',
-		'post_type'        => 'clientcomment',
-	);
-	$lastposts = get_posts( $args );
-	$i=1;
-	foreach ( $lastposts as $post ) : setup_postdata( $post ); ?>
-	<div class="col-xs-12 col-sm-6">
-		<div class="col-xs-12 col-sm-6">
-			<div class="items "><?php echo get_the_post_thumbnail( $post->ID, 'full',array('class' => 'img-responsive img-rounded')) ?></div>
-		</div>
-		<div class="col-xs-12 col-sm-6">			
-			<div class="comments img-rounded">				
-				<?php the_content();?>
-			</div>
-		</div>	
-		<div class="col-xs-12"><hr/></div>	
-	</div>	
-
-	<?php $i++;endforeach; 
-	wp_reset_postdata(); ?>
-</div>
 </div>
 <?php endwhile; ?>
 

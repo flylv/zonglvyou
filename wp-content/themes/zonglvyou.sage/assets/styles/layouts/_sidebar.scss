@@ -1,0 +1,47 @@
+.client{
+    border: 1px solid #e3e3e3;
+    h2{
+        color: #333;
+        font-size: 16px;
+        line-height: 30px;
+        padding-left: 10px;
+        padding-top: 5px;
+        text-align:left;
+        margin:0;
+    }
+    .comment-div{
+        border-bottom:1px dotted #ddd;
+        margin-bottom: 15px;
+    }
+    margin-top:20px;
+    background-color:#fff;
+    .user{
+        color:#999;
+        font: 12px/28px Arial;
+        margin-bottom:10px;
+        span{
+            color:#C1DFD0;
+            margin-right:15px;
+        }
+    }
+    .comments{
+        background: #f3f4f4 none repeat scroll 0 0;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        color: #666;
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 10px;
+        padding: 10px 15px;
+    }
+    .happy{
+        color: #999;
+        font-size: 12px;
+        text-align: right;
+        margin-bottom:10px;
+        span{
+            color:#F89832;
+        }
+    }
+}
