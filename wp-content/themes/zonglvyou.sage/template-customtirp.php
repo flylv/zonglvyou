@@ -7,7 +7,7 @@
 <?php while (have_posts()) : the_post(); ?>
   	<div id="customeTrip" class="row">
   	<div class="col-xs-12 col-sm-6">
-  		<div class="custom-form animated bounceIn">
+  		<div class="custom-form ">
   		<h1><?php the_title() ?></h1>
   			<?php the_content(); ?>
 		</div>

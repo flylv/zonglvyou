@@ -13,13 +13,52 @@ body{
 		position: relative;
 	}
 	.nav-primary{
-		display: inline-block;
 		#menu-main-menu{
 			li{
 				display: inline-block;
 			}
 		}
 	}
+	.nav-primary.collapse{
+		display: none;
+	}
+	.nav-primary.collapse.in{
+		display: inline-block;
+	}
+	.brand{
+		background: rgba(0, 0, 0, 0) url("../images/logo.png") no-repeat scroll 50% center / 114px auto;
+		display: inline-block;
+	    height: 60px;
+	    width: 114px;
+	    text-indent: -9999px;
+	    vertical-align: top;
+	}
+}
+#logo{
+	background: rgba(0, 0, 0, 0) url("../images/logo.png") no-repeat scroll 50% center / 114px auto;
+	display: inline-block;
+    height: 60px;
+    width: 114px;
+    text-indent: -9999px;
+    vertical-align: top;
+}
+.checkOrder{
+	float: right;
+	font: 16px/60px;
+	background: url('../images/orderlist.png') left center no-repeat;
+	line-height: 60px;
+    padding-left: 30px;
+    vertical-align: middle;
+}
+.menuSwitch{
+	border:none;
+	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    font-size: 20px;
+    float: right;
+    span{
+    	margin-left: 5px;
+    }
 }
 .nav-second{
 	#menu-second-menu{
@@ -128,5 +167,29 @@ body{
     color:#fff;
     span{
         margin-right:10px;
+    }
+}
+
+@media (min-width: $screen-xs-max) {
+    .menuSwitch{
+        display: none;
+    } 
+    .nav-primary{
+    	display: inline-block!important;
+    	height: auto!important;
+    }
+}
+
+@media (max-width: $screen-xs-max) {
+    .nav-primary{
+    	display: none;
+        li{
+        	width: 100%;
+        	text-align: center;
+        }
+    }
+    .checkOrder{
+    	float: none;
+    	display: block;
     }
 }

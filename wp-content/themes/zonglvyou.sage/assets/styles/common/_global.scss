@@ -16,19 +16,4 @@ body{
 .hvr-grow:focus,
 .hvr-grow:active {
     transform: scale(1.1);
-} 
-
-#cboxOverlay{
-    height: 100%;
-    position: fixed;
-    width: 100%;
-    background: #000 none repeat scroll 0 0;
-    overflow: visible;
-    cursor: auto;
-    opacity: 0.9;
-    visibility: visible;
-    left:0;
-    top:0;
-    z-index:9999;
 }
-

@@ -5,10 +5,11 @@
 ?>
 
 <?php while (have_posts()) : the_post(); ?>
+<div id="homepage">
 
 <?php if( have_rows('slideshow') ): ?>
 <div id="homeslide" class="carousel slide" data-ride="carousel">
-<a href="<?php echo get_permalink(17)?>" title="<?php _e('帮我订制行程', 'sage'); ?>" class="privite"><span class="glyphicon glyphicon-send"></span><?php _e('帮我订制行程', 'sage'); ?></a>
+<a href="<?php echo get_permalink(17)?>" title="<?php _e('帮我订制行程', 'sage'); ?>" class="privite"><?php _e('帮我订制行程', 'sage'); ?></a>
 
 <ol class="carousel-indicators">
 	<?php $i = 0;
@@ -53,44 +54,53 @@
 <?php endif; ?>
 
 <div class="container">
-<div class="all-cat clearfix well animated fadeInDown">
-	<div class="col-xs-12 col-sm-3">
-		<div class="list-left">
-			<h2><?php _e('热门路线', 'sage'); ?></h2>
-		 	<?php if (has_nav_menu('hot_trip')) :
-		    	wp_nav_menu(['theme_location' => 'hot_trip', 'menu_class' => 'hotTrip']);
-		  	endif;?>
-		</div>	 
-	</div>
 
-	<div class="col-xs-12 col-sm-9">
+<div class="clearfix animated fadeInDown">
+	<h2><?php _e('热门路线', 'sage'); ?></h2>
+	<?php if (has_nav_menu('hot_trip')) :?>
 	<div class="highline">
-		<?php $i=1;foreach (get_terms('category') as $cat) : ?>
-			<?php if($i>8) break; ?>
-		 	<?php if(z_taxonomy_image_url($cat->term_id)): ?>
-			 <a href="<?php echo get_term_link($cat->slug, 'category'); ?>" >
-			 <div class="col-xs-6 col-sm-3 items clearfix" style="background-image: url(<?php echo z_taxonomy_image_url($cat->term_id); ?>);">
-			 	<?php echo $cat->name; ?>
+		<?php foreach (wp_get_nav_menu_items("Hot trip") as $row) : ?>
+		 	<?php if(z_taxonomy_image_url($row->object_id)): ?>
+			 <a href="<?php echo $row->url; ?>" >
+			 <div class="col-xs-12 col-sm-4 items clearfix" style="background-image: url(<?php echo z_taxonomy_image_url($row->object_id); ?>);">
+			 	<div class="title"><?php echo $row->title; ?></div>
+			 </div>
+			 </a>
+			<?php ;endif; ?>
+	 	<?php endforeach; ?>
+ 	</div>
+<?php endif;?>	
+</div>
+
+<div class="clearfix animated fadeIn">
+	<h2><?php _e('探索世界', 'sage'); ?></h2>
+	<?php if (has_nav_menu('discovery_trip')) :?>
+	<div class="discovery">
+		<?php $i=1;foreach (wp_get_nav_menu_items("Discovery world") as $row) : ?>
+		 	<?php if(z_taxonomy_image_url($row->object_id)): ?>
+			 <a href="<?php echo $row->url; ?>" >
+			 <div class="col-xs-12 <?php if($i == 1) echo 'col-sm-8';elseif($i == 7) echo 'col-sm-8';else echo 'col-sm-4'?> items clearfix" style="background-image: url(<?php echo z_taxonomy_image_url($row->object_id); ?>);">
+			 	<div class="title"><?php echo $row->title; ?></div>
 			 </div>
 			 </a>
 			<?php $i++;endif; ?>
 	 	<?php endforeach; ?>
  	</div>
-	</div>
+<?php endif;?>
 </div>
 
 <div class="hightrip clearfix animated fadeInUp">
 <h2 class="home-title"><?php _e('当季主推行程', 'sage'); ?></h2>
 	<?php
 	$args = array( 
-		'posts_per_page' => 4,
+		'posts_per_page' => 8,
 		'category_name' => 'hightrip',
 		'post_status'      => 'publish',
 		'post_type'        => 'trip',
 	);
 	$lastposts = get_posts( $args );
 
-	foreach ( $lastposts as $post ) : setup_postdata( $post ); ?>
+	$i=1;foreach ( $lastposts as $post ) : setup_postdata( $post ); ?>
 	<?php $furtureImg = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID),'full');
 
 		if(count($furtureImg))
@@ -98,22 +108,22 @@
 		else
 			$url = '';
 	 ?>
-	<div class="col-xs-12 col-sm-3">
-		<a href="<?php the_permalink(); ?>" class="tirpTitle">
-		<div class="items img-rounded" style="background-image: url(<?php echo $url; ?>);">
-			<div class="des">
-				<?php the_title(); ?>
-				<?php if (get_field( "totalprice")): ?>
-					<div class="priceInfo"><span class="price"><?php echo get_field( "totalprice") ?></span> <?php _e('起/人', 'sage'); ?></div>
-				<?php endif ?>
-				
-			</div>
-		</div>
-		</a>
+	<a href="<?php the_permalink(); ?>">
+	<div class="col-xs-12 col-sm-3 items clearfix <?php if($i%2) echo 'signle'?>" style="background-image: url(<?php echo $url; ?>);">
+		<div class="insider" style="background:#fff;">
+		<div class="title">
+			<?php if (get_field( "home_icon")): ?>
+				<img class="theIcon" src="<?php echo get_field( "home_icon")?>" />
+			<?php endif ?>
+			<?php the_title(); ?>
+		</div>	
+		</div>	
 	</div>	
+	</a>
 
-	<?php endforeach; 
+	<?php $i++;endforeach; 
 	wp_reset_postdata(); ?>
+</div>
 </div>
 </div>
 <?php endwhile; ?>

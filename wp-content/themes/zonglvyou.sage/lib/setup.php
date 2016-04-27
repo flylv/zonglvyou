@@ -35,6 +35,14 @@ function setup() {
   ]);
 
   register_nav_menus([
+    'discovery_trip' => __('探索世界', 'sage')
+  ]);
+
+ register_nav_menus([
+    'friend_liner' => __('友情链接', 'sage')
+  ]);
+
+  register_nav_menus([
     'footer' => __('Footer', 'sage')
   ]);
 

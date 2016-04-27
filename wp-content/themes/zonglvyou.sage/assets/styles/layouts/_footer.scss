@@ -17,6 +17,65 @@ footer{
 			}
 		}
 	}	
+	.fixbar{
+		position: fixed;
+		right: 0;
+		bottom: 20%;
+		padding:0 5px;
+		color: #fff;
+		ul{
+			padding: 0;
+			margin: 0;
+			li{
+				list-style: none;
+				padding: 5px;
+				position: relative;
+				span{
+					width: 50px;
+					height: 50px;
+					display: block;
+				}			
+				ul{
+					display: none;
+					position: absolute;
+					left: -90px;
+					height: 50px;
+					top: 0;
+					min-height: 50px;
+					li{
+						background: #fff;						
+						padding:0 10px;
+						line-height: 50px;
+						margin: 0;
+						color: #000;
+						border:1px solid #e3e3e3;
+						-webkit-border-top-left-radius: 4px;
+						-webkit-border-bottom-left-radius: 4px;
+						-moz-border-radius-topleft: 4px;
+						-moz-border-radius-bottomleft: 4px;
+						border-top-left-radius: 4px;
+						border-bottom-left-radius: 4px;
+						border-right: none;
+					}
+				}
+			}
+		}
+		.qq span{
+			background: url('../images/QQ.jpg') center center no-repeat transparent;
+			background-size: 50px;
+		}
+		.wechat span{
+			background: url('../images/wechat.jpg') center center no-repeat transparent;
+			background-size: 50px;
+		}
+		.phone span{
+			background: url('../images/phone.png') center center no-repeat transparent;
+			background-size: 50px;
+		}
+		li:hover ul{
+			display: block;
+		}
+	}
 }
 .content-info{
 	color: #fff;
@@ -40,5 +99,24 @@ footer{
 			text-align: center;
 			margin: 0;
 		}
+	}
+}
+.friendLinker{	
+	margin-top: 30px;
+	ul{
+		padding: 0;
+	}
+	li{
+		list-style: none;
+		display: inline-block;
+		width: 120px;		
+	    margin-right: 5px;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    a{
+	    	color: #b6b6b6;
+	    	font-size: 12px;
+	    }
 	}
 }

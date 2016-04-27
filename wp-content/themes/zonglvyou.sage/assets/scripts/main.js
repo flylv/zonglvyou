@@ -22,6 +22,9 @@
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
+        $(".ninja-forms-success-msg").click(function(){
+          $(".ninja-forms-success-msg").hide();
+        });
       }
     },
     // Home page

@@ -104,13 +104,16 @@
 		<?php endif; ?>
 	</ul>
 	<div class="col-xs-12">
+		<?php the_content(); ?>
+	</div>
+	<div class="col-xs-12">
 		<div class="col-xs-12 col-sm-2 inside-title" id="thedetail"><span><?php _e('详细行程', 'sage'); ?></span></div>
 		
 		<div class="col-xs-12 col-sm-10 trip-detail">
 		<?php if( have_rows('alltrips') ): ?>		
 		  <?php $i=1;
 		  while( have_rows('alltrips') ): the_row(); ?>
-		    <?php  
+		    <?php
 		    $title = get_sub_field('title');
 		    $tripinfo = get_sub_field('tripinfo');?>
 			
@@ -120,12 +123,29 @@
 	                    <div class="day-dest-list"> <?php echo $title ?></div>
 	                </div>
 	            </div>
-				<div class="trip-des"><?php echo $tripinfo ?></div>
-			</div>
+				<div class="trip-des clearfix">
+					<?php echo $tripinfo ?>
 
+					<?php if(get_sub_field('moreimages')): ?>	
+					<div class="col-xs-12 addImage">
+						 <?php foreach(get_sub_field('moreimages') as $row): 						 
+						 $addImage = $row['images'];?>	
+							   <div class="imageList">
+							   	<img src="<?php echo $addImage["url"] ?>" class="img-responsive" />
+							   	<?php if ($addImage["title"]): ?>
+							   		<span><?php echo $addImage["title"] ?></span>
+							   	<?php endif ?>
+							   </div>
+						  <?php endforeach; ?>	 
+					  </div>
+					<?php endif; ?>
+
+				</div>		
+			</div>
 		  <?php $i++;endwhile; ?>	 
 
 		<?php endif; ?>
+
 		</div>
 	</div>
 

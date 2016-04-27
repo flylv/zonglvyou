@@ -31,3 +31,13 @@ function excerpt_more() {
   return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
 }
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
+
+function change_mail_name( $email ){
+  return '欧陆行'; // new email name from sender.
+}
+add_filter( 'wp_mail_from_name',__NAMESPACE__ . '\\change_mail_name' );
+
+function change_mail_from ($email ){
+  return 'contact@oulvxing.com'; // new email address from sender.
+}
+add_filter( 'wp_mail_from', __NAMESPACE__ . '\\change_mail_from' );
