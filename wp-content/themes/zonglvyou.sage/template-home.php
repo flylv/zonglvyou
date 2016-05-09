@@ -8,7 +8,7 @@
 <div id="homepage">
 
 <?php if( have_rows('slideshow') ): ?>
-<div id="homeslide" class="carousel slide" data-ride="carousel">
+<div id="homeslide" class="carousel slide" data-ride="carousel" data-interval="3000">
 <a href="<?php echo get_permalink(17)?>" title="<?php _e('帮我订制行程', 'sage'); ?>" class="privite"><?php _e('帮我订制行程', 'sage'); ?></a>
 
 <ol class="carousel-indicators">
@@ -55,6 +55,23 @@
 
 <div class="container">
 
+<div class="clearfix animated fadeIn">
+	<h2><?php _e('主题定制', 'sage'); ?></h2>
+	<?php if (has_nav_menu('discovery_trip')) :?>
+	<div class="discovery">
+		<?php $i=1;foreach (wp_get_nav_menu_items("Discovery world") as $row) : ?>
+		 	<?php if(z_taxonomy_image_url($row->object_id)): ?>
+			 <a href="<?php echo $row->url; ?>" >
+			 <div class="col-xs-12 <?php if($i == 1) echo 'col-sm-8';elseif($i == 7) echo 'col-sm-8';else echo 'col-sm-4'?> items clearfix" style="background-image: url(<?php echo z_taxonomy_image_url($row->object_id); ?>);">
+			 	<div class="title"><?php echo $row->title; ?></div>
+			 </div>
+			 </a>
+			<?php $i++;endif; ?>
+	 	<?php endforeach; ?>
+ 	</div>
+<?php endif;?>
+</div>
+
 <div class="clearfix animated fadeInDown">
 	<h2><?php _e('热门路线', 'sage'); ?></h2>
 	<?php if (has_nav_menu('hot_trip')) :?>
@@ -72,25 +89,10 @@
 <?php endif;?>	
 </div>
 
-<div class="clearfix animated fadeIn">
-	<h2><?php _e('探索世界', 'sage'); ?></h2>
-	<?php if (has_nav_menu('discovery_trip')) :?>
-	<div class="discovery">
-		<?php $i=1;foreach (wp_get_nav_menu_items("Discovery world") as $row) : ?>
-		 	<?php if(z_taxonomy_image_url($row->object_id)): ?>
-			 <a href="<?php echo $row->url; ?>" >
-			 <div class="col-xs-12 <?php if($i == 1) echo 'col-sm-8';elseif($i == 7) echo 'col-sm-8';else echo 'col-sm-4'?> items clearfix" style="background-image: url(<?php echo z_taxonomy_image_url($row->object_id); ?>);">
-			 	<div class="title"><?php echo $row->title; ?></div>
-			 </div>
-			 </a>
-			<?php $i++;endif; ?>
-	 	<?php endforeach; ?>
- 	</div>
-<?php endif;?>
-</div>
+
 
 <div class="hightrip clearfix animated fadeInUp">
-<h2 class="home-title"><?php _e('当季主推行程', 'sage'); ?></h2>
+<h2 class="home-title"><?php _e('当季主推', 'sage'); ?></h2>
 	<?php
 	$args = array( 
 		'posts_per_page' => 8,
@@ -109,7 +111,7 @@
 			$url = '';
 	 ?>
 	<a href="<?php the_permalink(); ?>">
-	<div class="col-xs-12 col-sm-3 items clearfix <?php if($i%2) echo 'signle'?>" style="background-image: url(<?php echo $url; ?>);">
+	<div class="col-xs-12 col-sm-3 items clearfix <?php if( ($i<4 && $i%2) || ($i > 4 && !($i%2))) echo 'signle'?>" style="background-image: url(<?php echo $url; ?>);">
 		<div class="insider" style="background:#fff;">
 		<div class="title">
 			<?php if (get_field( "home_icon")): ?>

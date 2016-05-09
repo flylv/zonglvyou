@@ -7,7 +7,7 @@ $args = array(
 );
 $the_query = new WP_Query($args);?>
 <div class="cat-info clearfix img-rounded">
-  <div class="col-xs-2 cat-name">
+  <div class="col-xs-12 col-sm-2 cat-name">
     <h1><?php echo get_cat_name(get_query_var('cat') ) ?></h1>
     <div class="trip-count">
       <?php _e('一共有', 'sage'); ?><?php echo count($the_query->posts) ?><?php _e('条路线', 'sage'); ?>
@@ -15,7 +15,7 @@ $the_query = new WP_Query($args);?>
   </div>
   
   <?php if (z_taxonomy_image_url(get_query_var('cat'))): ?>
-    <div class="col-xs-10 cat-img" style="background-image: url(<?php echo z_taxonomy_image_url(get_query_var('cat')); ?>)"></div>
+    <div class="col-xs-12 col-sm-10 cat-img" style="background-image: url(<?php echo z_taxonomy_image_url(get_query_var('cat')); ?>)"></div>
   <?php endif ?>
  
 </div>

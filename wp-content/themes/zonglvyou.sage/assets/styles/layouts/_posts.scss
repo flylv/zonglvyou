@@ -1,0 +1,21 @@
+@media (max-width: $screen-xs-max) {    
+    .hightrip .items{
+        margin-bottom:20px;
+    }
+    #customeTrip .custom-form .tripyear-wrap{
+        width:85%;
+    }
+    #customeTrip .custom-form .tripmonth-wrap,
+    #customeTrip .custom-form .tripday-wrap{
+        width:85%;
+        margin-left:7%;
+    }
+    .cat-info .cat-name .trip-count{
+        position:relative;
+        bottom:0;
+    }
+    .cat-info .cat-name{
+        height:auto;
+        margin-bottom:15px;
+    }
+}

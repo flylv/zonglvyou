@@ -165,6 +165,12 @@ body{
     background-color:#000;
     border-bottom: 1px solid #5cb85c;
     color:#fff;
+    .bar{
+    	margin:0 10px;
+    }
+    .list{
+    	display:inline-block;
+    }
     span{
         margin-right:10px;
     }
@@ -191,5 +197,18 @@ body{
     .checkOrder{
     	float: none;
     	display: block;
+    }
+    .topbrand{
+        font-size:10px;
+        .list{
+        	display:block;
+        	text-align:center;
+        }
+        .bar{
+        	display:none;
+        }
+    }
+    .menuSwitch{
+    	height:60px;
     }
 }

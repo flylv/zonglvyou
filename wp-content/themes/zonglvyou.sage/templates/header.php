@@ -1,13 +1,13 @@
 <div class="topbrand">
     <div class="text-right">
-        <span class="glyphicon glyphicon-envelope"></span>contact@europeluyou.com | <span class="glyphicon glyphicon-earphone"></span>+33 01 44 23 80 86（法国）
+        <div class="list"><span class="glyphicon glyphicon-envelope"></span>contact@europeluyou.com </div><div class="list bar"> | </div><div class="list"><span class="glyphicon glyphicon-earphone"></span>+33 01 44 23 80 86（法国）</div>
     </div>
 </div>
 <header class="banner">
   <div class="container">
     <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
     <button class="menuSwitch" type="button" data-toggle="collapse" data-target=".nav-primary" aria-expanded="false" aria-controls="nav-primary" class="collapsed">
-      <?php _e("MENU") ?><span class="glyphicon glyphicon-align-justify" ></span>
+      <?php _e("菜单") ?><span class="glyphicon glyphicon-align-justify" ></span>
     </button>
     <nav class="nav-primary" role="navigation">
       <?php
